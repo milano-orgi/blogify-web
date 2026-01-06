@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+button {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+button:hover {
+  transform: scale(1.1);
+}
+.container {
+  max-width: 1320px;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+
+.liner-hero {
+  background: linear-gradient(106.93deg, #f1f1fe 0%, #f7f1fd 100%);
+  padding: 128px 0px;
+  margin-top: 0px;
+}
+.liner {
+  background: linear-gradient(109.04deg, #4346ef 0%, #8524e5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-liner {
+  background: linear-gradient(104.03deg, #4346ef 0%, #8524e5 100%);
+  box-shadow: 0px 0px 40px 0px #4346ef33;
+}
+a:hover {
+  color: #4346ef;
+}
