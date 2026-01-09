@@ -4,24 +4,25 @@ import { banner } from "../data.js";
 
 function Postmain() {
   return (
-    <div className="container flex flex-wrap gap-6  justify-center ">
+    <div className="container flex flex-wrap justify-center gap-6">
       {banner.map((item) => (
         <div
           key={item.id}
-          className="w-96 bg-white rounded-xl shadow-md overflow-hidden flex flex-col  items-center justify-center">
+          className="flex w-96 flex-col items-center justify-center overflow-hidden rounded-xl bg-white shadow-md"
+        >
           <img
             src={item.img}
             alt={item.title}
-            className="w-full h-40 object-cover mb-4"
+            className="mb-4 h-40 w-full object-cover"
           />
-          <div className="dec p-4 w-full flex flex-col items-start">
-            <div className="flex items-center gap-2 text-gray-500 text-sm mb-2">
-              <img src={Cal} alt="calendar" className="w-4 h-4" />
+          <div className="dec flex w-full flex-col items-start p-4">
+            <div className="mb-2 flex items-center gap-2 text-sm text-gray-500">
+              <img src={Cal} alt="calendar" className="h-4 w-4" />
               <span>{item.data}</span>
             </div>
-            <h1 className="text-lg font-bold mb-1">{item.title}</h1>
-            <p className="text-gray-500 text-sm mb-2">{item.dec}</p>
-            <button className="text-blue-600 gap-1 mt-auto">
+            <h1 className="mb-1 text-lg font-bold">{item.title}</h1>
+            <p className="mb-2 text-sm text-gray-500">{item.dec}</p>
+            <button className="mt-auto gap-1 text-blue-600">
               Read more <i className="fa-solid fa-arrow-right"></i>
             </button>
           </div>

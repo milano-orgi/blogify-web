@@ -3,14 +3,15 @@ import data from "../data";
 
 function Cardmain() {
   return (
-    <div className="flex flex-wrap gap-6 justify-center mt-[64px]">
+    <div className="mt-[64px] flex flex-wrap justify-center gap-6">
       {data.map((item) => (
         <div
           key={item.id}
-          className="bg-white rounded-xl shadow-md p-6 w-72 flex flex-col ">
-          <img src={item.img} alt={item.title} className="w-16 h-16 mb-4" />
-          <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-          <p className="text-gray-500 ">{item.dec}</p>
+          className="flex w-72 flex-col rounded-xl bg-white p-6 shadow-md"
+        >
+          <img src={item.img} alt={item.title} className="mb-4 h-16 w-16" />
+          <h3 className="mb-2 text-xl font-bold">{item.title}</h3>
+          <p className="text-gray-500">{item.dec}</p>
         </div>
       ))}
     </div>

@@ -7,16 +7,16 @@ import In from "../assets/img/in.svg";
 function Footer() {
   return (
     <div className="container">
-      <div className="flex justify-between flex-wrap gap-[20px]">
+      <div className="flex flex-wrap justify-between gap-[20px]">
         <div>
           <img src={Logo} alt="logo" />
-          <p className=" mt-[16px] text-[10px] md:text-[12px] lg:text-[14px] max-w-[339px] text-[#6B7280] ">
+          <p className="mt-[16px] max-w-[339px] text-[10px] text-[#6B7280] md:text-[12px] lg:text-[14px]">
             Create, read, and inspire. Discover amazing stories written by
             talented creators from around the world.
           </p>
         </div>
         <div>
-          <h1 className="text-[18px] md:text-[20px] lg:text-[24px] font-semibold">
+          <h1 className="text-[18px] font-semibold md:text-[20px] lg:text-[24px]">
             Quick Links
           </h1>
           <div className="mt-[18px] flex flex-col gap-[9.5px] text-[#6B7280]">
@@ -26,10 +26,10 @@ function Footer() {
           </div>
         </div>
         <div>
-          <h1 className="text-[18px] md:text-[20px] lg:text-[24px] font-semibold">
+          <h1 className="text-[18px] font-semibold md:text-[20px] lg:text-[24px]">
             Connect
           </h1>
-          <div className="mt-[18px] flex ">
+          <div className="mt-[18px] flex">
             <a href="#">
               <img src={Twiter} alt="" />
             </a>
@@ -44,7 +44,7 @@ function Footer() {
       </div>
       <hr className="mt-[32px] mb-[32px] border-t-2 border-[#E5E7EB]" />
       <div className="mb-[20px] flex justify-center">
-        <p className="text-[#6B7280] text-[10px] md:text-[12px] lg:text-[14px] ">
+        <p className="text-[10px] text-[#6B7280] md:text-[12px] lg:text-[14px]">
           © 2025 Blogify. All rights reserved.
         </p>
       </div>
