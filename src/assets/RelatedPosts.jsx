@@ -1,36 +1,33 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { FaArrowRightLong } from "react-icons/fa6";
-import { Link } from "react-router-dom";
-
-import Data from "../assets/img/data.svg";
-
+import { useEffect, useState } from "react";
 let BASE = import.meta.env.VITE_BASE_URL;
+import { Link } from "react-router-dom";
+import Data from "../assets/img/data.svg";
+import { FaArrowRightLong } from "react-icons/fa6";
 
-function PostMap() {
+function RelatedPosts({ id }) {
   let [post, setPost] = useState([]);
   useEffect(() => {
-    async function getPost() {
+    async function getAllPost() {
       try {
         let res = await fetch(`${BASE}/api/v1/articles/`);
         if (!res.ok) {
-          throw new Error("Apida xatolik");
+          throw new Error(`Relatedda post muammi`);
         }
         let data = await res.json();
-        console.log(data);
         setPost(data);
       } catch (error) {
         console.log(error);
       }
     }
-    getPost();
-  }, []);
+    getAllPost();
+  });
   return (
-    <div className="container flex flex-wrap justify-between justify-center gap-5">
-      {post.slice(0, 3).map((item) => (
+    <div className="mt-[128px] mb-[112px] flex flex-wrap justify-center gap-[32px]">
+      {post.slice(id, id + 2).map((item) => (
         <div
           key={item.id}
-          className="w-full max-w-[384px] overflow-hidden rounded-[12px] border-[1px] border-[#E5E7EB]"
+          className="max-w-[526px] overflow-hidden rounded-[12px] border-[1px] border-[#E5E7EB]"
         >
           <div>
             <button className="absolute mt-[19px] ml-[16px] rounded-[99px] bg-[#4346EF] px-[10px] py-[2px] text-white hover:transform-[500]">
@@ -62,4 +59,4 @@ function PostMap() {
   );
 }
 
-export default PostMap;
+export default RelatedPosts;

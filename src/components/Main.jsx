@@ -1,6 +1,7 @@
 import React from "react";
 import Cardmain from "./Cardmain.jsx";
 import Postmain from "./Postmain.jsx";
+import { Link } from "react-router-dom";
 function Main() {
   return (
     <div className="mt-8 mb-[128px] sm:mt-16 md:mt-20 lg:mt-32">
@@ -22,9 +23,12 @@ function Main() {
               Check out our most recent articles
             </p>
           </div>
-          <button className="h-[44px] w-[130px] rounded-[12px] border-[2px] border-[#E5E7EB]">
+          <Link
+            className="flex h-[44px] w-[130px] items-center justify-center rounded-[12px] border-[2px] border-[#E5E7EB]"
+            to="/postspage"
+          >
             View All <i class="fa-solid fa-arrow-right"></i>
-          </button>
+          </Link>
         </div>
       </div>
       <Postmain />

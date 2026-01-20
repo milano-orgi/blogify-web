@@ -1,11 +1,13 @@
 import React from "react";
 import { useEffect, useState } from "react";
+
 // img
 import Data from "../assets/img/data.svg";
 // icons
 import { CiSearch } from "react-icons/ci";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { ImTab } from "react-icons/im";
+import { Link } from "react-router-dom";
 let Base = import.meta.env.VITE_BASE_URL;
 
 function Posts() {
@@ -81,9 +83,12 @@ function Posts() {
                 <p className="mb-[16px] text-[14px] text-[#6B7280]">
                   {item.content}
                 </p>
-                <a className="content-middle flex items-center gap-1" href="#">
+                <Link
+                  className="content-middle flex items-center gap-1"
+                  to={`/postDetailPage/${item.id}`}
+                >
                   Learn more <FaArrowRightLong />
-                </a>
+                </Link>
               </div>
             </div>
           );
