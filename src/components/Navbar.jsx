@@ -7,7 +7,7 @@ function Navbar() {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <div>
+    <div className="fixed top-0 right-0 left-0 bg-white/70 pb-[18px] backdrop-blur-md">
       <nav className="container flex items-center justify-between pt-[18px]">
         <a href="#">
           <img src={Logo} alt="Logo" />

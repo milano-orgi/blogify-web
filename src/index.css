@@ -33,3 +33,7 @@ button:hover {
 a:hover {
   color: #4346ef;
 }
+
+body {
+  padding-top: 72px;
+}
