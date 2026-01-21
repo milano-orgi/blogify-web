@@ -4,6 +4,8 @@ import PostsPage from "./pages/public/PostsPage.jsx";
 import PostDetail from "./pages/public/PostDetail.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PublicLayout from "./layouts/PublicLayout.jsx";
+import AuthLayout from "./layouts/AuthLayout.jsx";
+import LoginPage from "./pages/auth/LoginPage.jsx";
 
 function App() {
   const routes = createBrowserRouter([
@@ -22,6 +24,16 @@ function App() {
         {
           path: "/postDetailPage/:id",
           element: <PostDetail />,
+        },
+      ],
+    },
+    {
+      path: "/login",
+      element: <AuthLayout />,
+      children: [
+        {
+          index: true,
+          element: <LoginPage />,
         },
       ],
     },
