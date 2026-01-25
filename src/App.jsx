@@ -6,6 +6,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PublicLayout from "./layouts/PublicLayout.jsx";
 import AuthLayout from "./layouts/AuthLayout.jsx";
 import LoginPage from "./pages/auth/LoginPage.jsx";
+import Dashboard from "./pages/admin/Dashboard.jsx";
+import AdminLayout from "./layouts/AdminLayout.jsx";
+import CreatePosts from "./pages/admin/CreatePosts.jsx";
+import AdminPost from "./pages/admin/AdminPost.jsx";
 
 function App() {
   const routes = createBrowserRouter([
@@ -34,6 +38,24 @@ function App() {
         {
           index: true,
           element: <LoginPage />,
+        },
+      ],
+    },
+    {
+      path: "/admin",
+      element: <AdminLayout />,
+      children: [
+        {
+          path: "dashboard",
+          element: <Dashboard />,
+        },
+        {
+          path: "posts",
+          element: <AdminPost />,
+        },
+        {
+          path: "createpost",
+          element: <CreatePosts />,
         },
       ],
     },

@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "../../assets/img/logo.svg";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 let BASE = import.meta.env.VITE_BASE_URL;
 // icon
 import { FaArrowLeft } from "react-icons/fa6";
@@ -9,6 +10,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 function LoginPage() {
   let emailRef = useRef("");
   let passwordRef = useRef("");
+  let navigate = useNavigate();
 
   async function handleSumbit(e) {
     e.preventDefault();
@@ -28,9 +30,12 @@ function LoginPage() {
           password: passwordRef.current.value,
         }),
       });
-      if (!res.ok) {
+      if (res.ok && res.status === 200) {
+        navigate("/admin/dashboard");
+      } else {
         throw new Error("Postda xatolik bor");
       }
+
       let data = await res.json();
       console.log(data);
     } catch (error) {
