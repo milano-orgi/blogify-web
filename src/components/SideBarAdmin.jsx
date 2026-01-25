@@ -49,7 +49,7 @@ function SideBarAdmin() {
           }
           to={"/login"}
         >
-          <LuLogOut />
+          <LuLogOut to={"/login"} />
           Logout
         </NavLink>
       </div>

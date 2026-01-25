@@ -3,6 +3,7 @@ import Logo from "../assets/img/logo.svg";
 import Twiter from "../assets/img/twiter.svg";
 import Githup from "../assets/img/githup.svg";
 import In from "../assets/img/in.svg";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -20,9 +21,9 @@ function Footer() {
             Quick Links
           </h1>
           <div className="mt-[18px] flex flex-col gap-[9.5px] text-[#6B7280]">
-            <a href="#">Home</a>
-            <a href="#">Post</a>
-            <a href="#">Login</a>
+            <Link to={"/"}>Home</Link>
+            <Link to={"/postspage"}>Post</Link>
+            <a href="/login">Login</a>
           </div>
         </div>
         <div>

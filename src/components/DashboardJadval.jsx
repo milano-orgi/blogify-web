@@ -12,7 +12,7 @@ function DashboardJadval({ post }) {
 
       <table className="w-full table-fixed border-collapse">
         <thead>
-          <tr className="bg-gray-100">
+          <tr>
             <th className="p-[16px] text-left text-[14px] font-medium text-[#6B7280]">
               Title
             </th>
