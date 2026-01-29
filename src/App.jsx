@@ -10,6 +10,7 @@ import Dashboard from "./pages/admin/Dashboard.jsx";
 import AdminLayout from "./layouts/AdminLayout.jsx";
 import CreatePosts from "./pages/admin/CreatePosts.jsx";
 import AdminPost from "./pages/admin/AdminPost.jsx";
+import ProtectedRouter from "./pages/auth/ProtectedRouter.jsx";
 
 function App() {
   const routes = createBrowserRouter([
@@ -43,7 +44,11 @@ function App() {
     },
     {
       path: "/admin",
-      element: <AdminLayout />,
+      element: (
+        <ProtectedRouter>
+          <AdminLayout />
+        </ProtectedRouter>
+      ),
       children: [
         {
           path: "dashboard",

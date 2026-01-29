@@ -30,13 +30,14 @@ function LoginPage() {
           password: passwordRef.current.value,
         }),
       });
+      let data = await res.json();
       if (res.ok && res.status === 200) {
+        localStorage.setItem("token", JSON.stringify(data));
         navigate("/admin/dashboard");
       } else {
         throw new Error("Postda xatolik bor");
       }
 
-      let data = await res.json();
       console.log(data);
     } catch (error) {
       console.log(error);
