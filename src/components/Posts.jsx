@@ -1,5 +1,7 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useContext } from "react";
+import { CreatePostsContext } from "../context/PostsContext";
 
 // img
 import Data from "../assets/img/data.svg";
@@ -8,31 +10,13 @@ import { CiSearch } from "react-icons/ci";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { ImTab } from "react-icons/im";
 import { Link } from "react-router-dom";
-let Base = import.meta.env.VITE_BASE_URL;
 
 function Posts() {
-  let [get, setPost] = useState([]);
-  let [searchvalue, setSearchvalue] = useState("");
-  useEffect(() => {
-    async function getPost() {
-      try {
-        let res = await fetch(`${Base}/api/v1/articles/`);
-        if (!res.ok) {
-          throw new Error("Apida xatolik");
-        }
-        let data = await res.json();
-        setPost(data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    getPost();
-  }, []);
+  let [search, setSearch] = useState("");
+  let { post, setPost } = useContext(CreatePostsContext);
 
-  let filter = get.filter((item) => {
-    return item.content
-      .toLowerCase()
-      .includes(searchvalue.trim().toLowerCase());
+  let filter = post.filter((item) => {
+    return item.content.toLowerCase().includes(search.trim().toLowerCase());
   });
 
   return (
@@ -49,7 +33,7 @@ function Posts() {
             <CiSearch className="text-xl text-[#d6c4ff] opacity-50" />
             <input
               onInput={(e) => {
-                setSearchvalue(e.target.value);
+                setSearch(e.target.value);
               }}
               className="w-full outline-0"
               type="search"

@@ -27,7 +27,7 @@ function Main() {
             className="flex h-[44px] w-[130px] items-center justify-center rounded-[12px] border-[2px] border-[#E5E7EB]"
             to="/postspage"
           >
-            View All <i class="fa-solid fa-arrow-right"></i>
+            View All <i className="fa-solid fa-arrow-right"></i>
           </Link>
         </div>
       </div>

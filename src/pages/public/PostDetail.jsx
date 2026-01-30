@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { useContext } from "react";
+import { CreatePostsContext } from "../../context/PostsContext";
 let BASE = import.meta.env.VITE_BASE_URL;
-
 // img
 import Profile from "../../assets/img/profile.svg";
 import Data from "../../assets/img/calendar.svg";
@@ -12,6 +13,12 @@ import RelatedPosts from "../../assets/RelatedPosts";
 
 function PostDetalist() {
   let { id } = useParams();
+
+  // let { post, setPost } = useContext(CreatePostsContext);
+
+  // let posts = post.find((item) => {
+  //   item.id == { id };
+  // });
   let [post, setPost] = useState([]);
 
   useEffect(() => {

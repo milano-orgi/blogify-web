@@ -1,30 +1,15 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import {} from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CreatePostsContext } from "../context/PostsContext";
 
 import Data from "../assets/img/data.svg";
 
-let BASE = import.meta.env.VITE_BASE_URL;
-
 function PostMap() {
-  let [post, setPost] = useState([]);
-  useEffect(() => {
-    async function getPost() {
-      try {
-        let res = await fetch(`${BASE}/api/v1/articles/`);
-        if (!res.ok) {
-          throw new Error("Apida xatolik");
-        }
-        let data = await res.json();
-        console.log(data);
-        setPost(data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    getPost();
-  }, []);
+  let { post, setPost } = useContext(CreatePostsContext);
+
   return (
     <div className="container flex flex-wrap justify-between justify-center gap-5">
       {post.slice(0, 3).map((item) => (
